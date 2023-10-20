@@ -1,0 +1,11 @@
+<?php
+$AUTOCONFIG = array(
+  "directory"     => "/var/www/html/nextcloud/data",
+  "dbtype"        => "mysql",
+  "dbname"        => "nextcloud",
+  "dbuser"        => "dbuser",
+  "dbpass"        => $argv[1], // This will accept the dbpass value from the CLI
+  "dbhost"        => $argv[2], // This will accept the dbhost value from the CLI
+  "dbtableprefix" => "nextcloud",
+);
+?>
