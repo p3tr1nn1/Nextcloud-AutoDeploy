@@ -36,20 +36,3 @@ resource "aws_db_instance" "webapp_rds" {
   }
 
 }
-
-/*output "rds_address" {
-  value = aws_db_instance.webapp_rds.address
-}
-
-output "rds_arn" {
-  value = aws_db_instance.webapp_rds.arn
-}
-
-output "rds_db_name" {
-  value = aws_db_instance.webapp_rds.db_name
-}
-
-output "rds_port" {
-  value = aws_db_instance.webapp_rds.port
-}*/
-
