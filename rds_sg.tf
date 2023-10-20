@@ -35,5 +35,3 @@ resource "aws_security_group" "rds_sg" {
   }
 
 }
-
-//test
