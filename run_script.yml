@@ -1,0 +1,33 @@
+---
+- name: Copy file and execute script on EC2 instance
+  hosts: my_hosts
+  remote_user: ubuntu
+  gather_facts: yes
+  become: yes
+  tasks:
+    - name: Copy a local file to the remote instance
+      ansible.builtin.copy:
+        src: scripts/outputs/autoconfig.php  # Specify the correct path to autoconfig.php on your Ansible controller
+        dest: /tmp/autoconfig.php
+        owner: ubuntu
+        group: ubuntu
+        mode: '0644'
+
+- name: Copy file and execute script on EC2 instance
+  hosts: my_hosts
+  remote_user: ubuntu
+  gather_facts: yes
+  become: yes
+  tasks:
+    - name: Copy a local file to the remote instance
+      ansible.builtin.copy:
+        src: scripts/nextcloud-ssl.conf  # Specify the correct path to autoconfig.php on your Ansible controller
+        dest: /tmp/nextcloud-ssl.conf
+        owner: ubuntu
+        group: ubuntu
+        mode: '0644'
+
+    - name: Run a script with arguments (free form)
+      ansible.builtin.script: scripts/install_nextcloud.sh
+
+
