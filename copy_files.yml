@@ -1,0 +1,23 @@
+---
+- name: Copy php and apache config files
+  hosts: my_hosts
+  remote_user: ubuntu
+  gather_facts: yes
+  become: yes
+  tasks:
+    - name: Copy PHP config file to the remote instance
+      ansible.builtin.copy:
+        src: scripts/outputs/autoconfig.php  # Specify the correct path to autoconfig.php on your Ansible controller
+        dest: /var/www/html/nextcloud/config/autoconfig.php
+        owner: ubuntu
+        group: ubuntu
+        mode: '0644'
+
+    - name: Copy Apache config file to the remote instance
+      ansible.builtin.copy:
+        src: scripts/nextcloud.conf  # Specify the correct path to autoconfig.php on your Ansible controller
+        dest: /etc/apache2/sites-enabled/nextcloud.conf
+        owner: ubuntu
+        group: ubuntu
+        mode: '0644'
+

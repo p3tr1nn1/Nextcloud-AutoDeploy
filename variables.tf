@@ -27,6 +27,12 @@ variable "instance_type" {
   default = "t2.micro"
 }
 
+variable "number_of_instances" {
+  type    = number
+  default = 3
+
+}
+
 variable "autoconfigphp_location" {
   type    = string
   default = "autoconfig.php"
@@ -41,5 +47,11 @@ variable "rds_pass" {
 variable "public_key_location" {
   type    = string
   default = "~/.ssh/id_rsa.pub"
+
+}
+
+variable "private_key_location" {
+  type    = string
+  default = "~/.ssh/id_rsa"
 
 }
